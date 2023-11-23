@@ -1,0 +1,19 @@
+{
+  "name": "create-socvite",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "SOC Vite Template",
+  "bin": {
+    "create-socvite": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vite",
+    "template",
+    "svelte"
+  ],
+  "author": "cain.chu@dgiots.com",
+  "license": "ISC"
+}
