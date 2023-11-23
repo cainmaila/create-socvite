@@ -1,6 +1,14 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { argv } from "process";
+
+const argTargetDir = formatTargetDir(argv._[0]);
+
+let targetDir = argTargetDir || "test-demo";
+
+const root = path.join(cwd, targetDir);
+fs.mkdirSync(root, { recursive: true });
 
 const templateDir = path.resolve(fileURLToPath(import.meta.url), "./", `cain`);
 const files = fs.readdirSync(templateDir);
