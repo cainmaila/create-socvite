@@ -17,7 +17,7 @@ fs.mkdirSync(root, { recursive: true });
 const templateDir = path.resolve(
   fileURLToPath(import.meta.url),
   "../",
-  `template-svelte`
+  `soc-svelte`
 );
 const files = fs.readdirSync(templateDir);
 for (const file of files.filter((f) => f !== "package.json")) {
