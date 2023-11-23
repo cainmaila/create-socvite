@@ -14,9 +14,13 @@ let targetDir = argTargetDir || "test-demo";
 const root = path.join(cwd, targetDir);
 fs.mkdirSync(root, { recursive: true });
 
-const templateDir = path.resolve(fileURLToPath(import.meta.url), "../", `cain`);
+const templateDir = path.resolve(
+  fileURLToPath(import.meta.url),
+  "../",
+  `template-svelte`
+);
 const files = fs.readdirSync(templateDir);
-for (const file of files.filter((f) => f !== "package.json")) {
+for (const file of files.filter((f) => f !== "package.json_xx")) {
   write(file);
 }
 function write(file, content) {
