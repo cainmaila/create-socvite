@@ -17,19 +17,20 @@ fs.mkdirSync(root, { recursive: true });
 const templateDir = path.resolve(
   fileURLToPath(import.meta.url),
   "../",
-  `soc-svelte`
+  // `soc-svelte`
+  `cain2`
 );
 const files = fs.readdirSync(templateDir);
 for (const file of files.filter((f) => f !== "package.json")) {
   write(file);
 }
-const pkg = JSON.parse(
-  fs.readFileSync(path.join(templateDir, `package.json`), "utf-8")
-);
+// const pkg = JSON.parse(
+//   fs.readFileSync(path.join(templateDir, `package.json`), "utf-8")
+// );
 
-pkg.name = targetDir;
+// pkg.name = targetDir;
 
-write("package.json", JSON.stringify(pkg, null, 2) + "\n");
+// write("package.json", JSON.stringify(pkg, null, 2) + "\n");
 
 function write(file, content) {
   const targetPath = path.join(root, file);
