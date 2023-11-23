@@ -20,7 +20,7 @@ const templateDir = path.resolve(
   `template-svelte`
 );
 const files = fs.readdirSync(templateDir);
-for (const file of files.filter((f) => f !== "package.json_xx")) {
+for (const file of files.filter((f) => f !== "package.json")) {
   write(file);
 }
 function write(file, content) {
