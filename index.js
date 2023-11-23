@@ -46,11 +46,11 @@ const stdout = execSync("pnpm install", {
 process.stdout.write(stdout);
 
 //呼叫 pnpm prepare
-const stdout2 = execSync("pnpm prepare", {
-  cwd: root,
-  stdio: "inherit",
-});
-process.stdout.write(stdout2);
+// const stdout2 = execSync("pnpm prepare", {
+//   cwd: root,
+//   stdio: "inherit",
+// });
+// process.stdout.write(stdout2);
 
 function write(file, content) {
   const targetPath = path.join(root, renameFiles[file] ?? file);
