@@ -5,6 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { argv } from "process";
 
+console.log("xxxxxxx-xxxxx");
+
 const cwd = process.cwd();
 
 const argTargetDir = formatTargetDir(argv[2]);
