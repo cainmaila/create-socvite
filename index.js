@@ -5,6 +5,8 @@ import { argv } from "process";
 
 const argTargetDir = formatTargetDir(argv._[0]);
 
+console.log("122222", argTargetDir);
+
 let targetDir = argTargetDir || "test-demo";
 
 const root = path.join(cwd, targetDir);
