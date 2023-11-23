@@ -4,7 +4,6 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { argv } from "process";
-import { execSync } from "child_process";
 
 const cwd = process.cwd();
 
@@ -37,20 +36,6 @@ const pkg = JSON.parse(
 pkg.name = targetDir;
 
 write("package.json", JSON.stringify(pkg, null, 2) + "\n");
-
-//呼叫 pnpm install
-const stdout = execSync("pnpm install", {
-  cwd: root,
-  stdio: "inherit",
-});
-process.stdout.write(stdout);
-
-//呼叫 pnpm prepare
-// const stdout2 = execSync("pnpm prepare", {
-//   cwd: root,
-//   stdio: "inherit",
-// });
-// process.stdout.write(stdout2);
 
 function write(file, content) {
   const targetPath = path.join(root, renameFiles[file] ?? file);

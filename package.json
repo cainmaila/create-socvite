@@ -1,7 +1,7 @@
 {
   "name": "create-socvite",
   "type": "module",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "SOC Vite Template",
   "bin": {
     "create-socvite": "index.js"
