@@ -37,6 +37,22 @@ pkg.name = targetDir;
 
 write("package.json", JSON.stringify(pkg, null, 2) + "\n");
 
+//呼叫 pnpm install
+const execa = require("execa");
+const { stdout } = execa("pnpm", ["install"], {
+  cwd: root,
+  stdio: ["inherit", "inherit", "inherit"],
+});
+stdout.pipe(process.stdout);
+
+//呼叫 pnpm prepare
+const execa2 = require("execa");
+const { stdout2 } = execa2("pnpm", ["prepare"], {
+  cwd: root,
+  stdio: ["inherit", "inherit", "inherit"],
+});
+stdout2.pipe(process.stdout);
+
 function write(file, content) {
   const targetPath = path.join(root, renameFiles[file] ?? file);
   if (content) {
