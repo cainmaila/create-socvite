@@ -3,28 +3,32 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { argv } from "process";
 
-const argTargetDir = formatTargetDir(argv._[0]);
+const cwd = process.cwd();
 
-console.log("122222", argTargetDir);
+const argTargetDir = formatTargetDir(argv[2]);
 
 let targetDir = argTargetDir || "test-demo";
 
 const root = path.join(cwd, targetDir);
 fs.mkdirSync(root, { recursive: true });
 
-const templateDir = path.resolve(fileURLToPath(import.meta.url), "./", `cain`);
+const templateDir = path.resolve(fileURLToPath(import.meta.url), "../", `cain`);
 const files = fs.readdirSync(templateDir);
 for (const file of files.filter((f) => f !== "package.json")) {
   write(file);
 }
-const write = (file, content) => {
-  const targetPath = path.join(root, renameFiles[file] ?? file);
+function write(file, content) {
+  const targetPath = path.join(root, file);
   if (content) {
     fs.writeFileSync(targetPath, content);
   } else {
     copy(path.join(templateDir, file), targetPath);
   }
-};
+}
+
+function formatTargetDir(targetDir = "") {
+  return targetDir?.trim().replace(/\/+$/g, "");
+}
 
 function copy(src, dest) {
   const stat = fs.statSync(src);
