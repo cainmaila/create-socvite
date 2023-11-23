@@ -11,6 +11,12 @@ const argTargetDir = formatTargetDir(argv[2]);
 
 let targetDir = argTargetDir || "test-demo";
 
+/* 改名 */
+const renameFiles = {
+  _gitignore: ".gitignore",
+  _prettierrc: ".prettierrc",
+};
+
 const root = path.join(cwd, targetDir);
 fs.mkdirSync(root, { recursive: true });
 
@@ -18,7 +24,6 @@ const templateDir = path.resolve(
   fileURLToPath(import.meta.url),
   "../",
   `soc-svelte`
-  // `cain2`
 );
 const files = fs.readdirSync(templateDir);
 for (const file of files.filter((f) => f !== "package.json")) {
@@ -33,7 +38,7 @@ pkg.name = targetDir;
 write("package.json", JSON.stringify(pkg, null, 2) + "\n");
 
 function write(file, content) {
-  const targetPath = path.join(root, file);
+  const targetPath = path.join(root, renameFiles[file] ?? file);
   if (content) {
     fs.writeFileSync(targetPath, content);
   } else {
