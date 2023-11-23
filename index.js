@@ -36,9 +36,9 @@ pkg.name = targetDir;
 write("package.json", JSON.stringify(pkg, null, 2) + "\n");
 
 console.log(`\n安裝請依據執行以下..\n`);
-console.log(`\n1. git init\n`);
-console.log(`\n2. pnpm i\n`);
-console.log(`\n3. pnpm prepare\n`);
+console.log(`1. git init\n`);
+console.log(`2. pnpm i\n`);
+console.log(`3. pnpm prepare\n`);
 
 /**
  * 将内容写入文件。
