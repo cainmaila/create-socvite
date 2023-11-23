@@ -1,14 +1,14 @@
 {
   "name": "create-socvite",
   "type": "module",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "SOC Vite Template",
   "bin": {
     "create-socvite": "index.js"
   },
   "files": [
     "index.js",
-    "cain/**"
+    "soc-svelte/**"
   ],
   "scripts": {
     "start": "node index.js",
