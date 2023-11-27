@@ -13,7 +13,32 @@ export default defineConfig({
     TurboConsole({
       disableLaunchEditor: true,
     }),
-    VitePWA({ registerType: 'autoUpdate' }),
+    VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true,
+      },
+      injectRegister: 'auto',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg}'],
+      },
+      manifest: {
+        name: 'soc-svelte-vite-template',
+        short_name: 'SOC PWA',
+        description: 'SOC Svelte Vite Template',
+        theme_color: '#ff6739',
+        icons: [
+          {
+            src: 'images/logo.jpg',
+            sizes: '512x512',
+            type: 'image/jpeg',
+          },
+        ],
+        display: 'fullscreen',
+        start_url: '/',
+        id: '/',
+      },
+    }),
   ],
   resolve: {
     alias: {
