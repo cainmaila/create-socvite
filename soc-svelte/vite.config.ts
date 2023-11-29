@@ -15,9 +15,6 @@ export default defineConfig({
     }),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: {
-        enabled: true,
-      },
       injectRegister: 'auto',
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg}'],
@@ -42,8 +39,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      $lib: path.resolve(__dirname, 'src', 'lib'),
-      $assets: path.resolve(__dirname, 'src', 'assets'),
+      $src: path.resolve(__dirname, 'src'),
+      $lib: path.resolve(__dirname, 'src'),
     },
   },
   define: {

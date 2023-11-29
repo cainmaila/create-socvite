@@ -1,8 +1,8 @@
 <script lang="ts">
-  import svelteLogo from '$assets/svelte.svg'
+  import svelteLogo from '$lib/assets/svelte.svg'
   import viteLogo from '/vite.svg'
-  import Counter from '$lib/component/Counter.svelte'
-  import { useCounter } from '$lib/hook/counterHook'
+  import Counter from '$lib/components/Counter.svelte'
+  import { useCounter } from '$lib/hooks/counterHook'
 
   const _count$ = useCounter()
 </script>
