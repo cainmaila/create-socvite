@@ -24,8 +24,8 @@ vite.config.ts
 export default defineConfig({
   resolve: {
     alias: {
-      $lib: path.resolve(__dirname, 'src', 'lib'),
-      $assets: path.resolve(__dirname, 'src', 'assets'),
+      $src: path.resolve(__dirname, 'src'),
+      $lib: path.resolve(__dirname, 'src'),
       '*': ['node_modules/*'],
     },
   },
@@ -39,8 +39,9 @@ tsconfig.json
   "compilerOptions": {
     "baseUrl": ".", // Required for path aliases
     "paths": {
-      "$lib/*": ["src/lib/*"],
-      "$assets/*": ["src/assets/*"]
+      "$src/*": ["src/*"],
+      "$lib/*": ["src/*"],
+      "svelte-routing": ["node_modules/svelte-routing"] //fix svelte-routing ts bug..
     }
   }
 }

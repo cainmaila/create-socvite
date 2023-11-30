@@ -39,3 +39,25 @@ export default defineConfig({
 declare const __APP_NAME__: string
 declare const __APP_VERSION__: string
 ```
+
+### 擴充件事件
+
+[svelte-preprocess-delegate-events](https://github.com/baseballyama/svelte-preprocess-delegate-events)
+
+### Picocss
+
+[https://picocss.com/](https://picocss.com/)
+
+loading...
+
+```html
+<button aria-busy="true">Please wait…</button> <button aria-busy="true" class="secondary"></button>
+```
+
+Tooltip
+
+```html
+<p>Tooltip on a <a href="#" data-tooltip="Tooltip">link</a></p>
+<p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
+<p><button data-tooltip="Tooltip">Tooltip on a button</button></p>
+```
