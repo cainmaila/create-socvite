@@ -46,7 +46,7 @@ declare const __APP_VERSION__: string
 
 ### Picocss
 
-[https://picocss.com/](https://picocss.com/)
+[https://v2.picocss.com/](https://v2.picocss.com/)
 
 loading...
 
