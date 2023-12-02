@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import TurboConsole from 'vite-plugin-turbo-console'
 import { VitePWA } from 'vite-plugin-pwa'
+import { webUpdateNotice } from '@plugin-web-update-notification/vite'
 import path from 'path'
 import config from './package.json'
 
@@ -34,6 +35,13 @@ export default defineConfig({
         display: 'fullscreen',
         start_url: '/',
         id: '/',
+      },
+    }),
+    webUpdateNotice({
+      notificationProps: {
+        title: '新版本上線',
+        description: '請重整頁面以更新',
+        buttonText: '更新',
       },
     }),
   ],
