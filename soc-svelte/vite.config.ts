@@ -27,9 +27,10 @@ export default defineConfig({
         theme_color: '#ff6739',
         icons: [
           {
-            src: 'images/logo.jpg',
+            src: 'logo.png',
             sizes: '512x512',
-            type: 'image/jpeg',
+            type: 'image/png',
+            purpose: 'any maskable',
           },
         ],
         display: 'fullscreen',
